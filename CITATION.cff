@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: "Industrial ontology crosswalks, and the axiomatic asymmetry that breaks them"
+message: "If you use these crosswalks or the axiomatic-strength measurements, please cite this repository."
+type: dataset
+authors:
+  - family-names: Rovai
+    given-names: Fabio
+    affiliation: "Tesseract Academy (Kampakis and Co Ltd)"
+    orcid: "https://orcid.org/0009-0001-7244-794X"
+version: 0.1.0
+date-released: 2026-07-28
+license: CC-BY-4.0
+url: "https://github.com/fabio-rovai/industrial-ontology-crosswalks"
+keywords:
+  - ontology alignment
+  - ISO 15926
+  - IFC
+  - ISA-95
+  - IEC 62264
+  - Asset Administration Shell
+  - OPC UA
+  - CFIHOS
+  - SAREF
+  - description logic
+  - coherence
+abstract: >-
+  Machine-readable crosswalks between four pairs of industrial data standards,
+  together with the measurement that explains why such crosswalks fail. Each
+  standard is scored by an Axiomatic Strength Index, the count of its
+  contradiction-capable axioms. Standards whose index is zero are shown to be
+  refutation-inert: no set of class correspondences can make any of their classes
+  unsatisfiable, so a clean reasoner report against them is not evidence of a good
+  alignment. Across the pairs studied the index differs by up to three orders of
+  magnitude, which places all of the detectable logical risk on one side of each
+  crosswalk. The flagship IDO to IFC4 crosswalk is promoted to OWL and certified
+  with the HermiT reasoner, and demonstrates that every correspondence can pass
+  validation individually while the set collapses when asserted together.

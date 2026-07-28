@@ -1,0 +1,247 @@
+@prefix orcid: <https://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s4inma: <https://saref.etsi.org/saref4inma/> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@prefix semapv: <https://w3id.org/semapv/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/> .
+@prefix uadi: <https://w3id.org/tesseract/industrial-crosswalks/opcua-di-lifted#> .
+@prefix uamach: <https://w3id.org/tesseract/industrial-crosswalks/opcua-machinery-lifted#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/000> a sssom:Mapping ;
+    rdfs:comment "The one solid correspondence in this pair. Both denote the physical apparatus that senses, actuates or produces. OPC UA DI subsumes DeviceType under ComponentType and thence TopologyElementType, giving it a topological commitment SAREF does not make." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:DeviceType ;
+    sssom:object_label "DeviceType" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id saref:Device ;
+    sssom:subject_label "Device" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/001> a sssom:Mapping ;
+    rdfs:comment "SAREF4INMA specialises saref:Device for manufacturing. It lands inside DeviceType rather than beside it, because OPC UA DI does not distinguish production equipment from any other device." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:DeviceType ;
+    sssom:object_label "DeviceType" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id s4inma:ProductionEquipment ;
+    sssom:subject_label "ProductionEquipment" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/002> a sssom:Mapping ;
+    rdfs:comment "A work centre aggregates production equipment. OPC UA DI has no aggregation concept for that; BlockType is the nearest structural analogue and is a functional block, not an organisational unit. Weak on purpose." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.45 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:BlockType ;
+    sssom:object_label "BlockType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id s4inma:WorkCenter ;
+    sssom:subject_label "WorkCenter" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/003> a sssom:Mapping ;
+    rdfs:comment "Both are the identification carrier. The Machinery companion spec supplies what DI alone does not." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.7 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uamach:MachineryItemIdentificationType ;
+    sssom:object_label "MachineryItemIdentificationType" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id s4inma:ID ;
+    sssom:subject_label "ID" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/004> a sssom:Mapping ;
+    rdfs:comment "IRDI is one identifier scheme carried by that identification type. IEC 61360 IRDIs are the shared currency between SAREF4INMA, OPC UA and the AAS, which makes this row the most reusable one in the file." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.6 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uamach:MachineryItemIdentificationType ;
+    sssom:object_label "MachineryItemIdentificationType" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id s4inma:IRDI ;
+    sssom:subject_label "IRDI" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/005> a sssom:Mapping ;
+    rdfs:comment "SAREF State is a condition a device is in. The OPC UA type is a state MACHINE: the automaton, not the state. Related but at different levels; see DIVERGENCES.md D2." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.5 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uamach:MachineryItemState_StateMachineType ;
+    sssom:object_label "MachineryItemState_StateMachineType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id saref:State ;
+    sssom:subject_label "State" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/006> a sssom:Mapping ;
+    rdfs:comment "DI's device health values (NORMAL, FAILURE, CHECK_FUNCTION, OFF_SPEC, MAINTENANCE_REQUIRED) are states in the SAREF sense, drawn from NAMUR NE 107. The closest thing to a genuine shared vocabulary of condition." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.55 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:DeviceHealthEnumeration ;
+    sssom:object_label "DeviceHealthEnumeration" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id saref:State ;
+    sssom:subject_label "State" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/007> a sssom:Mapping ;
+    rdfs:comment "Both carry a measured value with a unit. DI's is specifically a lifetime or wear counter, so this is a narrow slice of what SAREF means by measurement." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.4 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:LifetimeVariableType ;
+    sssom:object_label "LifetimeVariableType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id saref:Measurement ;
+    sssom:subject_label "Measurement" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/008> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING and a name trap. SAREF Function is what a device is FOR, realised by commands. OPC UA FunctionalGroupType is a folder that groups parameters for browsing. One is a capability, the other is a UI-facing organisational device. See DIVERGENCES.md D1." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:FunctionalGroupType ;
+    sssom:object_label "FunctionalGroupType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id saref:Function ;
+    sssom:subject_label "Function" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/009> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING, same trap one level down." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:FunctionalGroupType ;
+    sssom:object_label "FunctionalGroupType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id s4inma:ProductionEquipmentFunction ;
+    sssom:subject_label "ProductionEquipmentFunction" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/010> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. OPC UA DI has no concept of a batch or lot at all. Batch semantics live in other OPC UA companion specifications (PackML, ISA-95) and cannot be reached from DI. Recorded so integrators do not go looking." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:DeviceType ;
+    sssom:object_label "DeviceType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id s4inma:Batch ;
+    sssom:subject_label "Batch" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/011> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. SAREF4INMA separates a category (the type of thing) from the instance. OPC UA DI collapses this: its ObjectTypes ARE the categories, so there is no first-class class-of-class to map onto. A genuine metamodelling mismatch, not a missing label." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:DeviceType ;
+    sssom:object_label "DeviceType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id s4inma:ItemCategory ;
+    sssom:subject_label "ItemCategory" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/012> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. The same metamodelling mismatch as ItemCategory, applied to equipment: SAREF4INMA can talk about a class of pump as a first-class individual with its own properties, whereas in OPC UA that class IS an ObjectType in the address space and cannot itself be described as data." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:DeviceType ;
+    sssom:object_label "DeviceType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id s4inma:ProductionEquipmentCategory ;
+    sssom:subject_label "ProductionEquipmentCategory" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/013> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. SAREF4INMA inherits a spatial model from SAREF4BLDG (Building, BuildingSpace, Area, Site). OPC UA DI models network and device topology, not physical space. The two topologies are not the same relation and must not be joined." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:TopologyElementType ;
+    sssom:object_label "TopologyElementType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id s4inma:Factory ;
+    sssom:subject_label "Factory" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/014> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. An Area is a physical region of a factory floor, inherited from SAREF4BLDG. A TopologyElementType is a node in a device or network topology. Two devices adjacent in an OPC UA topology may be in different buildings, and two devices in one Area may be on unrelated networks, so the relations are not interchangeable in either direction." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:TopologyElementType ;
+    sssom:object_label "TopologyElementType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id s4inma:Area ;
+    sssom:subject_label "Area" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/015> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE in the other direction. A large part of OPC UA DI is software lifecycle: SoftwareType, SoftwareLoadingType, PrepareForUpdateStateMachineType, SoftwareVersionType. SAREF has no vocabulary for the software running on a device, so this whole DI region is unmappable rather than mismapped." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:SoftwareType ;
+    sssom:object_label "SoftwareType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id saref:Device ;
+    sssom:subject_label "Device" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua/mapping/016> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. DI's nameplate interfaces (vendor, tag, asset identification) carry the commercial and maintenance identity of equipment. SAREF models the device as a functional thing and says nothing about its nameplate." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:object_id uadi:IVendorNameplateType ;
+    sssom:object_label "IVendorNameplateType" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id saref:Device ;
+    sssom:subject_label "Device" .
+
+saref:Measurement skos:relatedMatch uadi:LifetimeVariableType .
+
+s4inma:ID skos:closeMatch uamach:MachineryItemIdentificationType .
+
+s4inma:IRDI skos:narrowMatch uamach:MachineryItemIdentificationType .
+
+s4inma:ProductionEquipment skos:narrowMatch uadi:DeviceType .
+
+s4inma:WorkCenter skos:relatedMatch uadi:BlockType .
+
+saref:State skos:relatedMatch uadi:DeviceHealthEnumeration,
+        uamach:MachineryItemState_StateMachineType .
+
+saref:Device skos:closeMatch uadi:DeviceType .
+
+<https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> a sssom:MappingSet ;
+    rdfs:label "SAREF / SAREF4INMA to OPC UA DI and Machinery crosswalk" ;
+    rdfs:comment "The OPC UA side is a LIFT, not an OPC Foundation artefact: OPC UA ships an address-space NodeSet, not an ontology, and lift/opcua_to_rdf.py documents exactly what the transformation keeps and drops. The headline finding of this pair is NEGATIVE and is the reason the file is short: SAREF4INMA and OPC UA DI are close to complementary rather than overlapping. Their shared vocabulary is essentially {the device, its identification, its state}. Rows with predicate_modifier=Not record asserted absences, which here outnumber the correspondences. That imbalance is the result, not a gap in the work." ;
+    sssom:license <https://creativecommons.org/licenses/by/4.0/> ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/saref-opcua> ;
+    sssom:mapping_set_version "0.1.0" .
+

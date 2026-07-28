@@ -1,0 +1,119 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix sssom:  <https://w3id.org/sssom/> .
+@prefix cw:     <https://w3id.org/tesseract/industrial-crosswalks/> .
+
+#################################################################
+# Shapes for the reified correspondences emitted by
+# scripts/sssom_to_rdf.py. Every correspondence must carry a
+# subject, an object, a recognised predicate, a justification, a
+# confidence in [0,1] and provenance. A correspondence that cannot
+# say who asserted it and how sure they are is not evidence.
+#################################################################
+
+cw:MappingShape
+    a sh:NodeShape ;
+    sh:targetClass sssom:Mapping ;
+    rdfs:label "Correspondence shape" ;
+
+    sh:property [
+        sh:path sssom:subject_id ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "Every correspondence needs exactly one subject IRI." ;
+    ] ;
+
+    sh:property [
+        sh:path sssom:object_id ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "Every correspondence needs exactly one object IRI." ;
+    ] ;
+
+    sh:property [
+        sh:path sssom:predicate_id ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( skos:exactMatch skos:closeMatch skos:broadMatch
+                skos:narrowMatch skos:relatedMatch ) ;
+        sh:message "Predicate must be one of the five SKOS mapping properties." ;
+    ] ;
+
+    sh:property [
+        sh:path sssom:mapping_justification ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "Every correspondence must state its justification (a SEMAPV term)." ;
+    ] ;
+
+    sh:property [
+        sh:path sssom:confidence ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ; sh:maxInclusive 1.0 ;
+        sh:message "Confidence must be a single decimal in [0,1]." ;
+    ] ;
+
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "Every correspondence must be attributable to an agent." ;
+    ] ;
+
+    sh:property [
+        sh:path rdfs:comment ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:minLength 40 ;
+        sh:message "Every correspondence must carry a substantive comment. A bare mapping with no argument is not reviewable." ;
+    ] ;
+
+    # An asserted NON-mapping must say so explicitly and must be confident:
+    # publishing a hesitant negative claim is worse than publishing nothing.
+    sh:property [
+        sh:path sssom:predicate_modifier ;
+        sh:maxCount 1 ;
+        sh:in ( "Not" ) ;
+        sh:message "The only permitted predicate_modifier is 'Not'." ;
+    ] .
+
+
+cw:NegativeMappingShape
+    a sh:NodeShape ;
+    sh:targetClass sssom:Mapping ;
+    rdfs:label "Asserted non-mapping shape" ;
+    sh:sparql [
+        sh:message "An asserted non-mapping (predicate_modifier=Not) must carry confidence >= 0.8: a tentative denial should not be published as a machine-readable fact." ;
+        sh:prefixes cw: ;
+        sh:select """
+            PREFIX sssom: <https://w3id.org/sssom/>
+            SELECT $this WHERE {
+                $this sssom:predicate_modifier "Not" .
+                $this sssom:confidence ?c .
+                FILTER (?c < 0.8)
+            }
+        """ ;
+    ] .
+
+
+cw:MappingSetShape
+    a sh:NodeShape ;
+    sh:targetClass sssom:MappingSet ;
+    rdfs:label "Mapping set shape" ;
+    sh:property [
+        sh:path sssom:mapping_set_id ;
+        sh:minCount 1 ; sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path sssom:license ;
+        sh:minCount 1 ;
+        sh:message "A published crosswalk must state its licence." ;
+    ] ;
+    sh:property [
+        sh:path sssom:mapping_set_version ;
+        sh:minCount 1 ;
+    ] .

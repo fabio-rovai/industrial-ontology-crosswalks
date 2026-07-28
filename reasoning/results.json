@@ -1,0 +1,1007 @@
+{
+  "experiments": {
+    "E1_baseline": {
+      "ido_alone_unsat": 0,
+      "ido_classes": 49,
+      "ifc_alone_unsat": 0,
+      "ifc_classes": 1286,
+      "merged_no_bridge_unsat": 0,
+      "native_defect_set": []
+    },
+    "E2_naive": {
+      "conservativity_violations_ido": [
+        [
+          "Compound",
+          "Actual"
+        ],
+        [
+          "PhysicalObject",
+          "Actual"
+        ],
+        [
+          "InanimatePhysicalObject",
+          "Actual"
+        ],
+        [
+          "Organism",
+          "Actual"
+        ],
+        [
+          "Person",
+          "Actual"
+        ],
+        [
+          "Stream",
+          "PhysicalArtefact"
+        ],
+        [
+          "Stream",
+          "Actual"
+        ],
+        [
+          "ActivityProfile",
+          "Actual"
+        ],
+        [
+          "Phase",
+          "Actual"
+        ],
+        [
+          "PhysicalArtefact",
+          "Actual"
+        ],
+        [
+          "Role",
+          "Actual"
+        ],
+        [
+          "Event",
+          "Actual"
+        ],
+        [
+          "Feature",
+          "PhysicalArtefact"
+        ],
+        [
+          "Feature",
+          "Actual"
+        ],
+        [
+          "System",
+          "Actual"
+        ],
+        [
+          "Activity",
+          "Actual"
+        ],
+        [
+          "UnitOfMeasure",
+          "Scale"
+        ]
+      ],
+      "conservativity_violations_ifc": [
+        [
+          "IfcQuantityVolume",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcQuantityVolume",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcQuantityVolume",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcQuantityVolume",
+          "IfcRoot"
+        ],
+        [
+          "IfcQuantityVolume",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcConversionBasedUnit",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcConversionBasedUnit",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcConversionBasedUnit",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcConversionBasedUnit",
+          "IfcRoot"
+        ],
+        [
+          "IfcConversionBasedUnit",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcSIUnit",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcSIUnit",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcSIUnit",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcSIUnit",
+          "IfcRoot"
+        ],
+        [
+          "IfcSIUnit",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcPhysicalComplexQuantity",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcPhysicalComplexQuantity",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcPhysicalComplexQuantity",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcPhysicalComplexQuantity",
+          "IfcRoot"
+        ],
+        [
+          "IfcPhysicalComplexQuantity",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcPerson",
+          "IfcProductSelect"
+        ],
+        [
+          "IfcPerson",
+          "IfcObject"
+        ],
+        [
+          "IfcPerson",
+          "IfcObjectDefinition"
+        ],
+        [
+          "IfcPerson",
+          "IfcRoot"
+        ],
+        [
+          "IfcPerson",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcPerson",
+          "IfcProduct"
+        ],
+        [
+          "IfcConversionBasedUnitWithOffset",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcConversionBasedUnitWithOffset",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcConversionBasedUnitWithOffset",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcConversionBasedUnitWithOffset",
+          "IfcRoot"
+        ],
+        [
+          "IfcConversionBasedUnitWithOffset",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcPropertyDefinition",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcPropertyDefinition",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcQuantityCount",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcQuantityCount",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcQuantityCount",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcQuantityCount",
+          "IfcRoot"
+        ],
+        [
+          "IfcQuantityCount",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcQuantityWeight",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcQuantityWeight",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcQuantityWeight",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcQuantityWeight",
+          "IfcRoot"
+        ],
+        [
+          "IfcQuantityWeight",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcPhysicalQuantity",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcPhysicalQuantity",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcPhysicalQuantity",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcPhysicalQuantity",
+          "IfcRoot"
+        ],
+        [
+          "IfcPhysicalQuantity",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcPhysicalSimpleQuantity",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcPhysicalSimpleQuantity",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcPhysicalSimpleQuantity",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcPhysicalSimpleQuantity",
+          "IfcRoot"
+        ],
+        [
+          "IfcPhysicalSimpleQuantity",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcContextDependentUnit",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcContextDependentUnit",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcContextDependentUnit",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcContextDependentUnit",
+          "IfcRoot"
+        ],
+        [
+          "IfcContextDependentUnit",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcNamedUnit",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcNamedUnit",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcNamedUnit",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcNamedUnit",
+          "IfcRoot"
+        ],
+        [
+          "IfcNamedUnit",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcQuantityTime",
+          "IfcPropertySetDefinitionSelect"
+        ],
+        [
+          "IfcQuantityTime",
+          "IfcPropertyDefinition"
+        ],
+        [
+          "IfcQuantityTime",
+          "IfcPropertySetDefinition"
+        ],
+        [
+          "IfcQuantityTime",
+          "IfcRoot"
+        ],
+        [
+          "IfcQuantityTime",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcMaterial",
+          "IfcProductSelect"
+        ],
+        [
+          "IfcMaterial",
+          "IfcObject"
+        ],
+        [
+          "IfcMaterial",
+          "IfcObjectDefinition"
+        ],
+        [
+          "IfcMaterial",
+          "IfcRoot"
+        ],
+        [
+          "IfcMaterial",
+          "IfcDefinitionSelect"
+        ],
+        [
+          "IfcMaterial",
+          "IfcProduct"
+        ]
+      ],
+      "new_unsat": 29,
+      "new_unsat_classes": [
+        "IfcBuilding",
+        "IfcBuildingStorey",
+        "IfcComplexPropertyTemplate",
+        "IfcExternalSpatialElement",
+        "IfcExternalSpatialStructureElement",
+        "IfcPropertySetTemplate",
+        "IfcPropertyTemplate",
+        "IfcPropertyTemplateDefinition",
+        "IfcQuantityArea",
+        "IfcQuantityLength",
+        "IfcRelContainedInSpatialStructure",
+        "IfcRelCoversSpaces",
+        "IfcRelDefinesByTemplate",
+        "IfcRelReferencedInSpatialStructure",
+        "IfcRelServicesBuildings",
+        "IfcSimplePropertyTemplate",
+        "IfcSite",
+        "IfcSpace",
+        "IfcSpatialElement",
+        "IfcSpatialStructureElement",
+        "IfcSpatialZone",
+        "LineInSpace",
+        "Location",
+        "PlaneInSpace",
+        "PointInSpace",
+        "ScalarQuantityDatum",
+        "Site",
+        "SpatialLocation",
+        "VolumeInSpace"
+      ],
+      "total_unsat": 29
+    },
+    "E3_ablation": [
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcObject",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Actual"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcTypeObject",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Specified"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcProcess",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Activity"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcProduct",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:PhysicalObject"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcElement",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:PhysicalArtefact"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcPerson",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Person"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcOrganization",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Organization"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcNamedUnit",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:UnitOfMeasure"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcNamedUnit",
+        "predicate": "skos:narrowMatch",
+        "subject": "ido:Scale"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcPhysicalQuantity",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:QualityDatum"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcQuantityLength",
+        "predicate": "skos:broadMatch",
+        "subject": "ido:ScalarQuantityDatum"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcQuantityArea",
+        "predicate": "skos:broadMatch",
+        "subject": "ido:ScalarQuantityDatum"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcPropertyDefinition",
+        "predicate": "skos:broadMatch",
+        "subject": "ido:InformationObject"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcPropertySetDefinition",
+        "predicate": "skos:broadMatch",
+        "subject": "ido:InformationObject"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcFeatureElement",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Feature"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcMaterial",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Compound"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcTimePeriod",
+        "predicate": "skos:closeMatch",
+        "subject": "ido:Interval"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcActor",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:Role"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcProperty",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:Quality"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcSpatialElement",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:Location"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcSystem",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:System"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcSite",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:Site"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcEvent",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:Event"
+      },
+      {
+        "conservativity_violations": 0,
+        "new_unsat": 0,
+        "new_unsat_classes": [],
+        "object": "ifc:IfcFlowSegment",
+        "predicate": "skos:relatedMatch",
+        "subject": "ido:Stream"
+      }
+    ],
+    "E3b_pairwise": {
+      "conflicting_pairs": 29,
+      "conflicts": [
+        {
+          "conservativity_violations": 3,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Activity == ifc:IfcProcess",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 9,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:PhysicalObject == ifc:IfcProduct",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:PhysicalArtefact == ifc:IfcElement",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Feature == ifc:IfcFeatureElement",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Role == ifc:IfcActor",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 7,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Location == ifc:IfcSpatialElement",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:System == ifc:IfcSystem",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Site == ifc:IfcSite",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Event == ifc:IfcEvent",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:Actual == ifc:IfcObject",
+          "edge_b": "ido:Stream == ifc:IfcFlowSegment",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 6,
+          "edge_a": "ido:PhysicalObject == ifc:IfcProduct",
+          "edge_b": "ido:Person == ifc:IfcPerson",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 6,
+          "edge_a": "ido:PhysicalObject == ifc:IfcProduct",
+          "edge_b": "ido:Compound == ifc:IfcMaterial",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 0,
+          "edge_a": "ido:PhysicalObject == ifc:IfcProduct",
+          "edge_b": "ido:Location == ifc:IfcSpatialElement",
+          "new_unsat": 20,
+          "new_unsat_classes": [
+            "IfcBuilding",
+            "IfcBuildingStorey",
+            "IfcExternalSpatialElement",
+            "IfcExternalSpatialStructureElement",
+            "IfcRelContainedInSpatialStructure",
+            "IfcRelCoversSpaces",
+            "IfcRelReferencedInSpatialStructure",
+            "IfcRelServicesBuildings",
+            "IfcSite",
+            "IfcSpace",
+            "IfcSpatialElement",
+            "IfcSpatialStructureElement",
+            "IfcSpatialZone",
+            "LineInSpace",
+            "Location",
+            "PlaneInSpace",
+            "PointInSpace",
+            "Site",
+            "SpatialLocation",
+            "VolumeInSpace"
+          ]
+        },
+        {
+          "conservativity_violations": 0,
+          "edge_a": "ido:PhysicalObject == ifc:IfcProduct",
+          "edge_b": "ido:Site == ifc:IfcSite",
+          "new_unsat": 2,
+          "new_unsat_classes": [
+            "IfcSite",
+            "Site"
+          ]
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:PhysicalArtefact == ifc:IfcElement",
+          "edge_b": "ido:Feature == ifc:IfcFeatureElement",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:PhysicalArtefact == ifc:IfcElement",
+          "edge_b": "ido:Stream == ifc:IfcFlowSegment",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 1,
+          "edge_a": "ido:UnitOfMeasure == ifc:IfcNamedUnit",
+          "edge_b": "ido:Scale == ifc:IfcNamedUnit",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 15,
+          "edge_a": "ido:UnitOfMeasure == ifc:IfcNamedUnit",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertyDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 25,
+          "edge_a": "ido:UnitOfMeasure == ifc:IfcNamedUnit",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertySetDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 15,
+          "edge_a": "ido:Scale == ifc:IfcNamedUnit",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertyDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 25,
+          "edge_a": "ido:Scale == ifc:IfcNamedUnit",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertySetDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 27,
+          "edge_a": "ido:QualityDatum == ifc:IfcPhysicalQuantity",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertyDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 45,
+          "edge_a": "ido:QualityDatum == ifc:IfcPhysicalQuantity",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertySetDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 0,
+          "edge_a": "ido:ScalarQuantityDatum == ifc:IfcQuantityLength",
+          "edge_b": "ido:ScalarQuantityDatum == ifc:IfcQuantityArea",
+          "new_unsat": 3,
+          "new_unsat_classes": [
+            "IfcQuantityArea",
+            "IfcQuantityLength",
+            "ScalarQuantityDatum"
+          ]
+        },
+        {
+          "conservativity_violations": 3,
+          "edge_a": "ido:ScalarQuantityDatum == ifc:IfcQuantityLength",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertyDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 5,
+          "edge_a": "ido:ScalarQuantityDatum == ifc:IfcQuantityLength",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertySetDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 3,
+          "edge_a": "ido:ScalarQuantityDatum == ifc:IfcQuantityArea",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertyDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 5,
+          "edge_a": "ido:ScalarQuantityDatum == ifc:IfcQuantityArea",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertySetDefinition",
+          "new_unsat": 0,
+          "new_unsat_classes": []
+        },
+        {
+          "conservativity_violations": 2,
+          "edge_a": "ido:InformationObject == ifc:IfcPropertyDefinition",
+          "edge_b": "ido:InformationObject == ifc:IfcPropertySetDefinition",
+          "new_unsat": 6,
+          "new_unsat_classes": [
+            "IfcComplexPropertyTemplate",
+            "IfcPropertySetTemplate",
+            "IfcPropertyTemplate",
+            "IfcPropertyTemplateDefinition",
+            "IfcRelDefinesByTemplate",
+            "IfcSimplePropertyTemplate"
+          ]
+        }
+      ],
+      "pairs_tested": 276
+    },
+    "E4_orientation": {
+      "S1_new_unsat": 0,
+      "S2_violations": 0,
+      "S3_cross_entailments": 1038,
+      "candidates": 24,
+      "certified_axioms": 21,
+      "decisions": [
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcObject",
+          "subject": "ido:Actual"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcTypeObject",
+          "subject": "ido:Specified"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcProcess",
+          "subject": "ido:Activity"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcProduct",
+          "subject": "ido:PhysicalObject"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcElement",
+          "subject": "ido:PhysicalArtefact"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcPerson",
+          "subject": "ido:Person"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcOrganization",
+          "subject": "ido:Organization"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcNamedUnit",
+          "subject": "ido:UnitOfMeasure"
+        },
+        {
+          "form": "A <= B",
+          "kept": "sub",
+          "object": "ifc:IfcNamedUnit",
+          "subject": "ido:Scale"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcPhysicalQuantity",
+          "subject": "ido:QualityDatum"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcQuantityLength",
+          "subject": "ido:ScalarQuantityDatum"
+        },
+        {
+          "form": "",
+          "kept": null,
+          "object": "ifc:IfcQuantityArea",
+          "subject": "ido:ScalarQuantityDatum"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcPropertyDefinition",
+          "subject": "ido:InformationObject"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcPropertySetDefinition",
+          "subject": "ido:InformationObject"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcFeatureElement",
+          "subject": "ido:Feature"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcMaterial",
+          "subject": "ido:Compound"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcTimePeriod",
+          "subject": "ido:Interval"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcActor",
+          "subject": "ido:Role"
+        },
+        {
+          "form": "A == B",
+          "kept": "eq",
+          "object": "ifc:IfcProperty",
+          "subject": "ido:Quality"
+        },
+        {
+          "form": "",
+          "kept": null,
+          "object": "ifc:IfcSpatialElement",
+          "subject": "ido:Location"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcSystem",
+          "subject": "ido:System"
+        },
+        {
+          "form": "",
+          "kept": null,
+          "object": "ifc:IfcSite",
+          "subject": "ido:Site"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcEvent",
+          "subject": "ido:Event"
+        },
+        {
+          "form": "B <= A",
+          "kept": "sup",
+          "object": "ifc:IfcFlowSegment",
+          "subject": "ido:Stream"
+        }
+      ],
+      "pass": true
+    }
+  }
+}

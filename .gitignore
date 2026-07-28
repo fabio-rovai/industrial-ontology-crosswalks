@@ -1,0 +1,8 @@
+.venv/
+sources/
+reasoning/work/
+reasoning/RUN.log
+lift/out/*.ttl
+__pycache__/
+*.pyc
+.DS_Store

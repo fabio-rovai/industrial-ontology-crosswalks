@@ -1,0 +1,33 @@
+industrial-ontology-crosswalks
+Copyright 2026 Kampakis and Co Ltd, trading as The Tesseract Academy.
+
+The crosswalks, measurements, documentation and code in this repository are
+released under CC BY 4.0 (see LICENSE).
+
+THIS REPOSITORY DOES NOT REDISTRIBUTE ANY STANDARDS BODY ARTEFACT.
+
+Every source standard is referenced by IRI, fetched on demand by
+scripts/fetch_sources.py, and pinned by sha256 in SOURCES.lock. The
+sources/ directory is git-ignored for this reason. The crosswalks assert
+correspondences BETWEEN the terms of those standards; they do not reproduce them.
+
+Third-party artefacts referenced (not included):
+
+  IDO / ISO 15926-14 (LIS14 core)   POSC Caesar Association
+  ISO 15926-2:2003 OWL rendering    mirrored by NIST (usnistgov/iso15926)
+  ifcOWL IFC4 ADD2 (ISO 16739)      buildingSMART; community mirror
+  CFIHOS V2.0 OWL, IDO-aligned      F. Abad-Navarro, J. T. Fernandez-Breis and
+                                    A. Garcia-Castro, Universidad de Murcia
+                                    (tecnomod-um/cfihos), generated from the
+                                    official IOGP CFIHOS Excel specification.
+                                    NOT an IOGP artefact. CFIHOS itself is an
+                                    IOGP publication and is not restated here.
+  Asset Administration Shell        IDTA (admin-shell-io/aas-specs)
+  B2MML (ISA-95 / IEC 62264)        MESA International
+  OPC UA NodeSets                   OPC Foundation, MIT licence
+  SAREF and SAREF4INMA              ETSI
+
+The lifted OWL renderings in lift/out/ are derived works produced by the scripts
+in lift/. They are git-ignored and regenerated on demand, are not OPC Foundation
+or MESA International artefacts, and must not be presented as normative. Each
+lift script documents what it keeps and what it deliberately discards.

@@ -1,0 +1,77 @@
+{
+  "cfihos": {
+    "anchor_histogram": {
+      "FunctionalObject": 1,
+      "InanimatePhysicalObject": 1,
+      "InformationObject": 8,
+      "PhysicalArtefact": 1,
+      "PhysicalQuantity": 616,
+      "Quality": 772,
+      "QualityDatum": 1,
+      "Role": 1
+    },
+    "anchors_used": 8,
+    "cfihos_classes": 1397,
+    "grounded": 1400,
+    "unsat_alone": 0,
+    "unsat_with_ido": 0
+  },
+  "falsifiability": [
+    {
+      "classes": 49,
+      "detectable_pairs": 893,
+      "disjointness_axioms": 15,
+      "falsifiability_rate": 0.759354,
+      "label": "IDO / ISO 15926-14",
+      "pairs": 1176
+    },
+    {
+      "classes": 1286,
+      "detectable_pairs": 94626,
+      "disjointness_axioms": 2443,
+      "falsifiability_rate": 0.114524,
+      "label": "IFC4 ADD2",
+      "pairs": 826255
+    },
+    {
+      "classes": 201,
+      "detectable_pairs": 9408,
+      "disjointness_axioms": 781,
+      "falsifiability_rate": 0.46806,
+      "label": "ISO 15926-2:2003",
+      "pairs": 20100
+    },
+    {
+      "classes": 95,
+      "detectable_pairs": 0,
+      "disjointness_axioms": 0,
+      "falsifiability_rate": 0.0,
+      "label": "SAREF core",
+      "pairs": 4465
+    },
+    {
+      "classes": 64,
+      "detectable_pairs": 0,
+      "disjointness_axioms": 0,
+      "falsifiability_rate": 0.0,
+      "label": "AAS metamodel",
+      "pairs": 2016
+    },
+    {
+      "classes": 1397,
+      "detectable_pairs": 0,
+      "disjointness_axioms": 0,
+      "falsifiability_rate": 0.0,
+      "label": "CFIHOS V2.0 (IDO-aligned)",
+      "pairs": 975106
+    },
+    {
+      "classes": 53,
+      "detectable_pairs": 0,
+      "disjointness_axioms": 0,
+      "falsifiability_rate": 0.0,
+      "label": "OPC UA DI (lifted)",
+      "pairs": 1378
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+standard                   classes    disjoint    max-card    func/inv       compl         ASI   ASI/class   inert?
+-------------------------------------------------------------------------------------------------------------------
+IDO / ISO 15926-14              49          15           0           3           0          18       0.367        -
+ISO 15926-2:2003               201         781         137           0           0         918       4.567        -
+IFC4 ADD2                    1,299       2,443       1,468       1,450           0       5,361       4.127        -
+CFIHOS V2.0 (IDO)            1,896           0           0           0           0           0         0.0    INERT
+AAS metamodel                   64           0           0           0           0           0         0.0    INERT
+SAREF core                      98           0          12           6           0          18       0.184        -
+SAREF4INMA                      34           4           6           0           0          10       0.294        -
+
+pair                                          ASI high   ASI low     ratio
+--------------------------------------------------------------------------
+IDO / ISO 15926-14  x  IFC4 ADD2                 5,361        18    297.8x
+CFIHOS V2.0 (IDO)  x  IDO / ISO 15926-14            18         0 UNBOUNDED
+SAREF4INMA  x  AAS metamodel                        10         0 UNBOUNDED
+SAREF4INMA  x  IFC4 ADD2                         5,361        10    536.1x
+ISO 15926-2:2003  x  IFC4 ADD2                   5,361       918      5.8x
+CFIHOS V2.0 (IDO)  x  IFC4 ADD2                  5,361         0 UNBOUNDED

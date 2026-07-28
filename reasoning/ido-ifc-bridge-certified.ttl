@@ -1,0 +1,47 @@
+@prefix ido: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
+@prefix ifc: <http://ifcowl.openbimstandards.org/IFC4_ADD2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ifc:IfcActor rdfs:subClassOf ido:Role .
+
+ifc:IfcElement rdfs:subClassOf ido:PhysicalArtefact .
+
+ifc:IfcEvent rdfs:subClassOf ido:Event .
+
+ifc:IfcFeatureElement rdfs:subClassOf ido:Feature .
+
+ifc:IfcFlowSegment rdfs:subClassOf ido:Stream .
+
+ifc:IfcProcess rdfs:subClassOf ido:Activity .
+
+ifc:IfcProduct rdfs:subClassOf ido:PhysicalObject .
+
+ifc:IfcPropertyDefinition rdfs:subClassOf ido:InformationObject .
+
+ifc:IfcPropertySetDefinition rdfs:subClassOf ido:InformationObject .
+
+ifc:IfcSystem rdfs:subClassOf ido:System .
+
+ido:Actual owl:equivalentClass ifc:IfcObject .
+
+ido:Compound owl:equivalentClass ifc:IfcMaterial .
+
+ido:Interval owl:equivalentClass ifc:IfcTimePeriod .
+
+ido:Organization owl:equivalentClass ifc:IfcOrganization .
+
+ido:Person owl:equivalentClass ifc:IfcPerson .
+
+ido:Quality owl:equivalentClass ifc:IfcProperty .
+
+ido:QualityDatum owl:equivalentClass ifc:IfcPhysicalQuantity .
+
+ido:ScalarQuantityDatum owl:equivalentClass ifc:IfcQuantityLength .
+
+ido:Scale rdfs:subClassOf ifc:IfcNamedUnit .
+
+ido:Specified owl:equivalentClass ifc:IfcTypeObject .
+
+ido:UnitOfMeasure owl:equivalentClass ifc:IfcNamedUnit .
+

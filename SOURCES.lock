@@ -1,0 +1,163 @@
+{
+  "aas": {
+    "bytes": 95846,
+    "file": "aas-metamodel.ttl",
+    "licence_note": "Asset Administration Shell metamodel, RDF rendering. IDTA / admin-shell-io.",
+    "sha256": "5bb96b29121d5449f9347a31da4f849e2de2c14d14f4c8dd1d45fcf2e314fbab",
+    "url": "https://raw.githubusercontent.com/admin-shell-io/aas-specs/master/schemas/rdf/rdf-ontology.ttl"
+  },
+  "b2mml/B2MML-Common.xsd": {
+    "bytes": 102769,
+    "file": "b2mml/B2MML-Common.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "7b439e92168080b60ad544408f7a547da79de7ff223f11d40cd1b70a74a156e0",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-Common.xsd"
+  },
+  "b2mml/B2MML-Equipment.xsd": {
+    "bytes": 35240,
+    "file": "b2mml/B2MML-Equipment.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "d6bd1109498f64e2e1226a129405bd419bcc7e850314c6f4fdf783a734bb8182",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-Equipment.xsd"
+  },
+  "b2mml/B2MML-Material.xsd": {
+    "bytes": 60332,
+    "file": "b2mml/B2MML-Material.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "d4e88b949be2689cd87fcb84f32cf261b1ffa6bcb80c139e774658c3ee660590",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-Material.xsd"
+  },
+  "b2mml/B2MML-OperationalLocation.xsd": {
+    "bytes": 36987,
+    "file": "b2mml/B2MML-OperationalLocation.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "fda14696a063355b09e01ef7235dea7a3f249d0362f600dbd4d9bb7ba3ca978a",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-OperationalLocation.xsd"
+  },
+  "b2mml/B2MML-OperationsCapability.xsd": {
+    "bytes": 29585,
+    "file": "b2mml/B2MML-OperationsCapability.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "05271e4cfa88eb09e36a9a00af2b6bfe16c71bcfb13a5a2a109ffd14c692bf18",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-OperationsCapability.xsd"
+  },
+  "b2mml/B2MML-OperationsDefinition.xsd": {
+    "bytes": 40955,
+    "file": "b2mml/B2MML-OperationsDefinition.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "7c38b6303cb20ad99f01aa692d3df924e71af09a76f101a1336dc67993db446b",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-OperationsDefinition.xsd"
+  },
+  "b2mml/B2MML-OperationsPerformance.xsd": {
+    "bytes": 15530,
+    "file": "b2mml/B2MML-OperationsPerformance.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "9c1f981794473b53250862d86ea133695459eb6a8973df9ad2308887dd9b31c6",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-OperationsPerformance.xsd"
+  },
+  "b2mml/B2MML-OperationsSchedule.xsd": {
+    "bytes": 18603,
+    "file": "b2mml/B2MML-OperationsSchedule.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "a613cd3a4f5e078eb1b538401fad5ccedcc59a6bea20227d8f77c47aee354829",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-OperationsSchedule.xsd"
+  },
+  "b2mml/B2MML-Personnel.xsd": {
+    "bytes": 34791,
+    "file": "b2mml/B2MML-Personnel.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "4029233ac0382ef9a808fb6d5e4786faf498c6c4be59a2ed0f0ebeaccdd9f655",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-Personnel.xsd"
+  },
+  "b2mml/B2MML-PhysicalAsset.xsd": {
+    "bytes": 36749,
+    "file": "b2mml/B2MML-PhysicalAsset.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "92fd4f41e3a472afe414460a9b196ba6ff8e25ee26a0045f9c19c9807196e10d",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-PhysicalAsset.xsd"
+  },
+  "b2mml/B2MML-ProcessSegment.xsd": {
+    "bytes": 41674,
+    "file": "b2mml/B2MML-ProcessSegment.xsd",
+    "licence_note": "B2MML, the XML rendering of ISA-95 / IEC 62264. MESA International.",
+    "sha256": "63eae4d455de992f30afd76e510abb2af4b2d5d7b4f512a94f01995c2715253a",
+    "url": "https://raw.githubusercontent.com/MESAInternational/B2MML-BatchML/master/Schema/B2MML-ProcessSegment.xsd"
+  },
+  "cfihos-ido": {
+    "bytes": 3082160,
+    "file": "cfihos-v2.0-ido.owl",
+    "licence_note": "CFIHOS V2.0 OWL aligned to IDO, by Abad-Navarro, Fernandez-Breis and Garcia-Castro (tecnomod-um/cfihos). Third-party rendering generated from the official IOGP CFIHOS Excel specification; NOT an IOGP artefact. This repository audits it, and does not restate IOGP material.",
+    "sha256": "addc1d201a27ce059ebcb27966e105fca5fa0c769ffaee89fa661d840dee9fb6",
+    "url": "https://raw.githubusercontent.com/tecnomod-um/cfihos/main/ontology/CORE-CFIHOS-V2.0_ido.owl"
+  },
+  "ido": {
+    "bytes": 181175,
+    "file": "ido-lis14-core.ttl",
+    "licence_note": "Industrial Data Ontology (LIS14 core), POSC Caesar Association. The ISO 15926-14 standardisation-track rendering.",
+    "sha256": "60b67b242ee10755a6aee75bf1950c8265fd9b460eb606bd754c3c90afc6c517",
+    "url": "https://rds.posccaesar.org/ontology/lis14/ont/core"
+  },
+  "ifc": {
+    "bytes": 1907118,
+    "file": "ifc4-add2.ttl",
+    "licence_note": "ifcOWL IFC4_ADD2 (ISO 16739). buildingSMART community mirror; the standards.buildingsmart.org OWL URLs return HTTP 403 to automated clients.",
+    "sha256": "fd544165707090285f93a100ef61113a687d3ba79c64bbf0bba7c9591df5aaf6",
+    "url": "https://raw.githubusercontent.com/buildingsmart-community/ifcOWL/master/IFC4_ADD2.ttl"
+  },
+  "iso15926-2": {
+    "bytes": 125161,
+    "file": "iso15926-2-2003.ttl",
+    "licence_note": "ISO 15926-2:2003 data model, OWL rendering mirrored by NIST (usnistgov/iso15926).",
+    "sha256": "7b32028d6a570531cf9d105512a8ba20fd29b216ee97ccbbd51f6d47f8c5c002",
+    "url": "https://raw.githubusercontent.com/usnistgov/iso15926/master/standards/pca/ISO-15926-2_2003.ttl"
+  },
+  "opcua-di": {
+    "bytes": 295700,
+    "file": "opcua-di-nodeset2.xml",
+    "licence_note": "OPC UA Device Information (DI) companion specification NodeSet. OPC Foundation. This, not the core NodeSet, is where device semantics live.",
+    "sha256": "40a02d98a8b2a014ec9f961625a422df3566d4dd783151ec6ae55b47296199de",
+    "url": "https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/latest/DI/Opc.Ua.Di.NodeSet2.xml"
+  },
+  "opcua-i4aas": {
+    "bytes": 286182,
+    "file": "opcua-i4aas-nodeset2.xml",
+    "licence_note": "OPC UA I4AAS companion specification NodeSet: the OPC Foundation's own mapping of the Asset Administration Shell into OPC UA. Prior art for the ISA-95 to AAS join.",
+    "sha256": "7c2c1035d21ed4c6f15dd5be5c2e4f2577390b525556d68fd983b0e102f96693",
+    "url": "https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/latest/I4AAS/Opc.Ua.I4AAS.NodeSet2.xml"
+  },
+  "opcua-isa95": {
+    "bytes": 214803,
+    "file": "opcua-isa95-nodeset2.xml",
+    "licence_note": "OPC UA ISA-95 companion specification NodeSet. OPC Foundation. An INDEPENDENT rendering of ISA-95 alongside MESA's B2MML, which makes triangulation possible: two bodies rendering the same standard need not agree.",
+    "sha256": "4f4acb7bb3f4bf0569335e9a0b8cdb5ac02bea1d7c0488a2131f955845458c36",
+    "url": "https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/latest/ISA-95/Opc.ISA95.NodeSet2.xml"
+  },
+  "opcua-machinery": {
+    "bytes": 125570,
+    "file": "opcua-machinery-nodeset2.xml",
+    "licence_note": "OPC UA Machinery companion specification NodeSet. OPC Foundation.",
+    "sha256": "1bc4ba9f70d07c51d3310123f2ae2186703eb6cf4f2d26aea4a2853423b61b41",
+    "url": "https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/latest/Machinery/Opc.Ua.Machinery.NodeSet2.xml"
+  },
+  "opcua-nodeset": {
+    "bytes": 4130608,
+    "file": "opcua-nodeset2.xml",
+    "licence_note": "OPC UA core NodeSet2. OPC Foundation. XML, not OWL: see lift/ for the RDF lift.",
+    "sha256": "a749678b5c4f2381fffdfc0e9514ec3315f36b1bdb31af402d3741a2db54f889",
+    "url": "https://raw.githubusercontent.com/OPCFoundation/UA-Nodeset/latest/Schema/Opc.Ua.NodeSet2.xml"
+  },
+  "saref-core": {
+    "bytes": 131492,
+    "file": "saref-core-v3.2.1.ttl",
+    "licence_note": "SAREF core v3.2.1. ETSI, BSD-3-Clause-style ETSI licence.",
+    "sha256": "d3d859e57c7a07558a8c674868eb37a5f529636876ac7f4b26c140b2bedb218a",
+    "url": "https://saref.etsi.org/core/v3.2.1/saref.ttl"
+  },
+  "saref4inma": {
+    "bytes": 45295,
+    "file": "saref4inma-v1.1.2.ttl",
+    "licence_note": "SAREF extension for industry and manufacturing v1.1.2. ETSI.",
+    "sha256": "10bfcba7e00228de82b7ba308d4f44a95e5788bbb0d53251542175cb2f3bfe53",
+    "url": "https://saref.etsi.org/saref4inma/v1.1.2/saref4inma.ttl"
+  }
+}

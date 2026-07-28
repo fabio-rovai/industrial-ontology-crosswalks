@@ -1,0 +1,455 @@
+@prefix ido: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
+@prefix ifc: <http://ifcowl.openbimstandards.org/IFC4_ADD2#> .
+@prefix orcid: <https://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semapv: <https://w3id.org/semapv/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/000> a sssom:Mapping ;
+    rdfs:comment "Both standards independently draw an as-built/as-designed line and both make it disjoint: IDO asserts Actual owl:disjointWith Specified, IFC asserts IfcObject owl:disjointWith IfcTypeObject. The occurrence side corresponds. This is the strongest structural agreement between the two models." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcObject ;
+    sssom:object_label "IfcObject" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Actual ;
+    sssom:subject_label "Actual" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/001> a sssom:Mapping ;
+    rdfs:comment "The as-designed side of the same mirrored distinction. Not exact: IDO Specified is a requirement specification carrying restrictions, IFC IfcTypeObject is a catalogue type shared by occurrences. Every IfcTypeObject is Specified; not every Specified individual is a catalogue type." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcTypeObject ;
+    sssom:object_label "IfcTypeObject" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Specified ;
+    sssom:subject_label "Specified" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/002> a sssom:Mapping ;
+    rdfs:comment "Both are the doing/happening notion. Orientation-sensitive: promoting this to owl:equivalentClass is unsafe because IfcProcess is subsumed by IfcObject, which drags activities into the IDO Object branch that IDO declares disjoint from Temporal. See DIVERGENCES.md D1." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcProcess ;
+    sssom:object_label "IfcProcess" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Activity ;
+    sssom:subject_label "Activity" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/003> a sssom:Mapping ;
+    rdfs:comment "IfcProduct is the spatially located physical thing. Narrower than IDO PhysicalObject in one direction (IfcProduct requires placement and representation) and broader in another (IfcAnnotation and IfcGrid are IfcProducts but are not physical objects)." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.75 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcProduct ;
+    sssom:object_label "IfcProduct" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:PhysicalObject ;
+    sssom:subject_label "PhysicalObject" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/004> a sssom:Mapping ;
+    rdfs:comment "The manufactured, installed physical component. The cleanest domain-level correspondence in the set." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcElement ;
+    sssom:object_label "IfcElement" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:PhysicalArtefact ;
+    sssom:subject_label "PhysicalArtefact" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/005> a sssom:Mapping ;
+    rdfs:comment "Direct. Note the asymmetry: IDO Person is subsumed by Organism and thence PhysicalObject and carries that disjointness, whereas IfcPerson sits in the IFC resource layer outside IfcObject entirely and carries no disjointness at all." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcPerson ;
+    sssom:object_label "IfcPerson" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Person ;
+    sssom:subject_label "Person" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/006> a sssom:Mapping ;
+    rdfs:comment "Direct. Same layering asymmetry as Person: IDO makes Organization disjoint from PhysicalObject, InformationObject and Location; IFC asserts nothing." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcOrganization ;
+    sssom:object_label "IfcOrganization" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Organization ;
+    sssom:subject_label "Organization" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/007> a sssom:Mapping ;
+    rdfs:comment "IfcNamedUnit is the named unit with a dimensional exponent. IDO UnitOfMeasure is broader because it also subsumes Scale." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcNamedUnit ;
+    sssom:object_label "IfcNamedUnit" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:UnitOfMeasure ;
+    sssom:subject_label "UnitOfMeasure" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/008> a sssom:Mapping ;
+    rdfs:comment "IDO Scale is a subclass of UnitOfMeasure covering ordinal and interval scales. IFC has no scale concept distinct from unit, so this maps into IfcNamedUnit with loss." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.6 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcNamedUnit ;
+    sssom:object_label "IfcNamedUnit" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id ido:Scale ;
+    sssom:subject_label "Scale" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/009> a sssom:Mapping ;
+    rdfs:comment "THE CORRECT TARGET for IfcPhysicalQuantity. IfcPhysicalQuantity is a recorded measurement value, which is IDO's QualityDatum (an InformationObject), not IDO's PhysicalQuantity (a Quality). See the asserted non-mapping below and DIVERGENCES.md D4." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcPhysicalQuantity ;
+    sssom:object_label "IfcPhysicalQuantity" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:QualityDatum ;
+    sssom:subject_label "QualityDatum" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/010> a sssom:Mapping ;
+    rdfs:comment "IfcQuantityLength is one scalar quantity datum among several (area, volume, count, weight, time). IDO's single ScalarQuantityDatum subsumes all of them." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:broadMatch ;
+    sssom:subject_id ido:ScalarQuantityDatum ;
+    sssom:subject_label "ScalarQuantityDatum" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/011> a sssom:Mapping ;
+    rdfs:comment "The area case of the row above. Note that IfcQuantityLength and IfcQuantityArea are declared disjoint in IFC, so both rows cannot be promoted to equivalence together: the orientation search keeps the first and drops this one. That is the correct outcome and is visible in reasoning/results.json." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcQuantityArea ;
+    sssom:object_label "IfcQuantityArea" ;
+    sssom:predicate_id skos:broadMatch ;
+    sssom:subject_id ido:ScalarQuantityDatum ;
+    sssom:subject_label "ScalarQuantityDatum" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/012> a sssom:Mapping ;
+    rdfs:comment "IfcPropertyDefinition (property sets and templates) is information about objects, so it falls inside IDO InformationObject. IDO's class is much broader: it also covers documents, datasets and quality datums." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.7 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcPropertyDefinition ;
+    sssom:object_label "IfcPropertyDefinition" ;
+    sssom:predicate_id skos:broadMatch ;
+    sssom:subject_id ido:InformationObject ;
+    sssom:subject_label "InformationObject" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/013> a sssom:Mapping ;
+    rdfs:comment "The property-set specialisation of the row above." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.7 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcPropertySetDefinition ;
+    sssom:object_label "IfcPropertySetDefinition" ;
+    sssom:predicate_id skos:broadMatch ;
+    sssom:subject_id ido:InformationObject ;
+    sssom:subject_label "InformationObject" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/014> a sssom:Mapping ;
+    rdfs:comment "Both denote a dependent shape modification of a host element (a void, a projection). IDO Feature is subsumed by PhysicalObject; IfcFeatureElement is subsumed by IfcElement." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcFeatureElement ;
+    sssom:object_label "IfcFeatureElement" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Feature ;
+    sssom:subject_label "Feature" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/015> a sssom:Mapping ;
+    rdfs:comment "IDO Compound is the stuff an object is materially made of, reached by hasMaterialPart. IfcMaterial is the homogeneous material assigned to an element. Close, but IFC treats material as a resource-layer definition rather than a physical object." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.75 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcMaterial ;
+    sssom:object_label "IfcMaterial" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Compound ;
+    sssom:subject_label "Compound" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/016> a sssom:Mapping ;
+    rdfs:comment "Both denote a bounded stretch of time. IFC's is a start/end time pair in the resource layer rather than a first-class temporal region." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.7 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcTimePeriod ;
+    sssom:object_label "IfcTimePeriod" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:Interval ;
+    sssom:subject_label "Interval" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/017> a sssom:Mapping ;
+    rdfs:comment "IfcActor is a person or organisation acting in a project role, which conflates the bearer with the role. IDO separates them: Role is a Dependent borne by an Object. Related, not equivalent." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.55 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcActor ;
+    sssom:object_label "IfcActor" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Role ;
+    sssom:subject_label "Role" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/018> a sssom:Mapping ;
+    rdfs:comment "IfcProperty is a named value slot, which straddles IDO's Quality (the borne characteristic) and QualityDatum (the recorded value). IFC does not draw that distinction, so no clean subsumption exists in either direction." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.5 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcProperty ;
+    sssom:object_label "IfcProperty" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Quality ;
+    sssom:subject_label "Quality" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/019> a sssom:Mapping ;
+    rdfs:comment "Category clash, not a defect in either model. IDO Location is disjoint from PhysicalObject; IfcSpatialElement is a subclass of IfcProduct, so in IFC a spatial region IS a product. Recorded as related so that tools do not promote it." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.5 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcSpatialElement ;
+    sssom:object_label "IfcSpatialElement" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Location ;
+    sssom:subject_label "Location" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/020> a sssom:Mapping ;
+    rdfs:comment "Name-identical, structurally incompatible. See the asserted non-mapping below and DIVERGENCES.md D2. Retained as relatedMatch only so that a human reading the crosswalk finds the warning at the point of need." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.45 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcSystem ;
+    sssom:object_label "IfcSystem" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:System ;
+    sssom:subject_label "System" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/021> a sssom:Mapping ;
+    rdfs:comment "Name-identical, category-incompatible. See DIVERGENCES.md D3." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.45 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcSite ;
+    sssom:object_label "IfcSite" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Site ;
+    sssom:subject_label "Site" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/022> a sssom:Mapping ;
+    rdfs:comment "Name-identical, semantically different. See DIVERGENCES.md D5." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.4 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcEvent ;
+    sssom:object_label "IfcEvent" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Event ;
+    sssom:subject_label "Event" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/023> a sssom:Mapping ;
+    rdfs:comment "The classic process-plant to building trap: the flowing matter versus the conduit that carries it. See DIVERGENCES.md D6." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.4 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcFlowSegment ;
+    sssom:object_label "IfcFlowSegment" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Stream ;
+    sssom:subject_label "Stream" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/024> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING. IDO Object is disjoint from Temporal, so it excludes activities. IFC IfcObject subsumes IfcProcess, so it includes them. Equating the two makes every process both Object and Temporal in IDO, which are declared disjoint. Confidence is in the non-mapping, which is provable. DIVERGENCES.md D1." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.95 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcObject ;
+    sssom:object_label "IfcObject" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:Object ;
+    sssom:subject_label "Object" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/025> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING. IDO PhysicalQuantity is a Quality (a Dependent, borne by an object). IfcPhysicalQuantity is a recorded measurement value. IDO declares Dependent disjoint from Object, and its QualityDatum branch sits under Object, so the two cannot be equated. Map IfcPhysicalQuantity to ido:QualityDatum instead. DIVERGENCES.md D4." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.95 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcPhysicalQuantity ;
+    sssom:object_label "IfcPhysicalQuantity" ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:PhysicalQuantity ;
+    sssom:subject_label "PhysicalQuantity" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/026> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING. IDO FunctionalObject and PhysicalObject are NOT disjoint, so one pump is legitimately both. IFC subsumes IfcSystem under IfcGroup, and IfcGroup is declared disjoint from IfcProduct. Equating System with IfcSystem while mapping PhysicalObject to IfcProduct makes any functional-and-physical individual unsatisfiable. DIVERGENCES.md D2." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcSystem ;
+    sssom:object_label "IfcSystem" ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:System ;
+    sssom:subject_label "System" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/027> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING. IDO Site is a Location, and IDO declares Location disjoint from PhysicalObject. IfcSite is a subclass of IfcProduct, the physical parcel of land. The two sit on opposite sides of IDO's own disjointness. DIVERGENCES.md D3." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcSite ;
+    sssom:object_label "IfcSite" ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:Site ;
+    sssom:subject_label "Site" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/028> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING. IDO Event is a subclass of Activity that need not be temporally connected: its own definition gives several switch-on occurrences over a week as ONE event individual. IfcEvent is a discrete trigger point, disjoint from IfcTask and IfcProcedure. A scattered aggregate is not a trigger. DIVERGENCES.md D5." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcEvent ;
+    sssom:object_label "IfcEvent" ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:Event ;
+    sssom:subject_label "Event" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/029> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING. IDO Stream is subsumed by InanimatePhysicalObject: it is the fluid in motion. IfcFlowSegment is a IfcDistributionFlowElement: it is the pipe. Handover tooling that equates them silently swaps contents for containment. DIVERGENCES.md D6." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcFlowSegment ;
+    sssom:object_label "IfcFlowSegment" ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:Stream ;
+    sssom:subject_label "Stream" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/030> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. IDO carries a realisable branch (Potential, Disposition, Capability, Function) with no IFC counterpart at all: IFC has no class for what a thing is FOR, only predefined type enumerations. Recorded so the gap is machine-visible rather than silently unmapped. DIVERGENCES.md D7." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcTypeProduct ;
+    sssom:object_label "IfcTypeProduct" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:Function ;
+    sssom:subject_label "Function" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc/mapping/031> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE, as above: the capability layer has no IFC counterpart." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:object_id ifc:IfcTypeProduct ;
+    sssom:object_label "IfcTypeProduct" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id ido:Capability ;
+    sssom:subject_label "Capability" .
+
+ido:Activity skos:closeMatch ifc:IfcProcess .
+
+ido:Actual skos:closeMatch ifc:IfcObject .
+
+ido:Compound skos:closeMatch ifc:IfcMaterial .
+
+ido:Feature skos:closeMatch ifc:IfcFeatureElement .
+
+ido:Interval skos:closeMatch ifc:IfcTimePeriod .
+
+ido:Location skos:relatedMatch ifc:IfcSpatialElement .
+
+ido:Organization skos:closeMatch ifc:IfcOrganization .
+
+ido:Person skos:closeMatch ifc:IfcPerson .
+
+ido:PhysicalArtefact skos:closeMatch ifc:IfcElement .
+
+ido:PhysicalObject skos:closeMatch ifc:IfcProduct .
+
+ido:Quality skos:relatedMatch ifc:IfcProperty .
+
+ido:QualityDatum skos:closeMatch ifc:IfcPhysicalQuantity .
+
+ido:Role skos:relatedMatch ifc:IfcActor .
+
+ido:Scale skos:narrowMatch ifc:IfcNamedUnit .
+
+ido:Specified skos:closeMatch ifc:IfcTypeObject .
+
+ido:UnitOfMeasure skos:closeMatch ifc:IfcNamedUnit .
+
+ido:Event skos:relatedMatch ifc:IfcEvent .
+
+ido:InformationObject skos:broadMatch ifc:IfcPropertyDefinition,
+        ifc:IfcPropertySetDefinition .
+
+ido:ScalarQuantityDatum skos:broadMatch ifc:IfcQuantityArea,
+        ifc:IfcQuantityLength .
+
+ido:Site skos:relatedMatch ifc:IfcSite .
+
+ido:Stream skos:relatedMatch ifc:IfcFlowSegment .
+
+ido:System skos:relatedMatch ifc:IfcSystem .
+
+<https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> a sssom:MappingSet ;
+    rdfs:label "IDO (ISO 15926-14) to IFC4 ADD2 backbone crosswalk" ;
+    rdfs:comment "Candidate-for-review crosswalk between the Industrial Data Ontology (the ISO 15926-14 standardisation-track OWL rendering, POSC Caesar) and ifcOWL IFC4 ADD2 (ISO 16739). Rows with predicate_modifier=Not are asserted NON-mappings: pairs that look alignable and are not. See DIVERGENCES.md for the argument behind each one. Confidence is the curator's, not a computed score." ;
+    sssom:license <https://creativecommons.org/licenses/by/4.0/> ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/ido-ifc> ;
+    sssom:mapping_set_version "0.1.0" .
+
