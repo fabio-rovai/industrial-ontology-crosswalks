@@ -1,4 +1,4 @@
-# CFIHOS ↔ IDO: an audit, not a rival crosswalk
+# CFIHOS: a property-layer crosswalk to IFC4, and an audit of the IDO alignment
 
 CFIHOS (the Capital Facilities Information Handover Specification, IOGP) already
 has an open OWL rendering aligned to the Industrial Data Ontology, produced by
@@ -9,7 +9,24 @@ questions, SHACL validation and OQuaRE quality reporting. It is the only open
 machine-readable CFIHOS, and building a competing alignment would be a waste of
 everyone's time.
 
-So this directory does something else: it measures **how much of that alignment a
+This directory therefore ships two things. First, a **CFIHOS to IFC4 crosswalk at the
+property layer**, [`cfihos-ifc.sssom.tsv`](cfihos-ifc.sssom.tsv): 12 correspondences
+and 3 asserted non-mappings. It is scoped to properties because the open CFIHOS OWL
+exposes a property dictionary, 1,388 classes such as `shell wall thickness`, and not a
+labelled equipment taxonomy in `owl:Class` form, so an equipment-class crosswalk is not
+authorable from the open artefacts. The finding it records is that CFIHOS names 1,388
+process-plant properties while IFC offers roughly a dozen generic quantity and property
+constructs, so the mapping is **many-to-one into a generic slot**: CFIHOS to IFC keeps
+the number and loses the name, and IFC to CFIHOS is not determined at all. IFC has no
+pressure quantity at all, which strands every one of CFIHOS's 180-plus pressure
+properties outside the quantity machinery.
+
+The crosswalk also records the route worth actually using: because the Murcia rendering
+already grounds every CFIHOS property in IDO, and this repository certifies
+`ido:QualityDatum` against `ifc:IfcPhysicalQuantity` with a reasoner, CFIHOS reaches IFC
+through IDO as a hub. Composing two certified hops beats authoring 1,388 direct ones.
+
+Second, and the reason this is called an audit, it measures **how much of that alignment a
 reasoner is in a position to check**. The answer turns out to be close to none,
 for reasons that have nothing to do with the quality of their work and everything
 to do with the vocabularies involved. The same result would hold for any

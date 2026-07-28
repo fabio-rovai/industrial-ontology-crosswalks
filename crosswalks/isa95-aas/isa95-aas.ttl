@@ -1,0 +1,257 @@
+@prefix aas: <https://admin-shell.io/aas/3/2/> .
+@prefix isa95: <https://w3id.org/tesseract/industrial-crosswalks/isa95-lifted#> .
+@prefix orcid: <https://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semapv: <https://w3id.org/semapv/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/000> a sssom:Mapping ;
+    rdfs:comment "The one clean correspondence in the pair. Both are a named, typed, valued characteristic of a thing, and both carry a semantic reference to an external dictionary entry. This row and the ConceptDescription row below are the whole basis on which an ISA-95 to AAS integration can actually stand." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Property ;
+    sssom:object_label "Property" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id isa95:EquipmentPropertyType ;
+    sssom:subject_label "EquipmentProperty" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/001> a sssom:Mapping ;
+    rdfs:comment "The class-level definition of what a property MEANS, as opposed to a value it takes. AAS separates this cleanly into ConceptDescription; ISA-95 carries it on the class property. The correspondence holds because both are ultimately pointing at an IEC 61360 dictionary entry." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:ConceptDescription ;
+    sssom:object_label "ConceptDescription" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id isa95:ClassPropertyTypeType ;
+    sssom:subject_label "ClassPropertyType" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/002> a sssom:Mapping ;
+    rdfs:comment "The IEC 61360 content of the definition specifically: preferred name, unit, data type, value list. This is the most portable join in the whole repository, because IEC 61360 IRDIs survive the modelling differences that class names do not." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.75 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:DataSpecificationIec61360 ;
+    sssom:object_label "DataSpecificationIec61360" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id isa95:ClassPropertyTypeType ;
+    sssom:subject_label "ClassPropertyType" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/003> a sssom:Mapping ;
+    rdfs:comment "Deliberately relatedMatch and not close. An ISA-95 PhysicalAsset is the physical thing; aas:AssetInformation is the block of metadata inside a shell that identifies which asset the shell represents. Related by reference, not the same entity. See DIVERGENCES.md D1." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.6 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:AssetInformation ;
+    sssom:object_label "AssetInformation" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id isa95:PhysicalAssetType ;
+    sssom:subject_label "PhysicalAsset" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/004> a sssom:Mapping ;
+    rdfs:comment "Both exist to reconcile two identifier systems for the same physical thing: ISA-95 binds an equipment identity to a physical-asset identity, and SpecificAssetId binds a shell to a domain-specific identifier. A genuine functional correspondence at the identity layer." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.7 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:SpecificAssetId ;
+    sssom:object_label "SpecificAssetId" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id isa95:EquipmentAssetMappingType ;
+    sssom:subject_label "EquipmentAssetMapping" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/005> a sssom:Mapping ;
+    rdfs:comment "Weak by construction. An ISA-95 EquipmentClass groups equipment sharing properties; the nearest AAS practice is a submodel template describing an aspect shared across shells. But a Submodel is a container in one shell, not a class over many, so this is an analogy in usage rather than a correspondence in meaning." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.45 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Submodel ;
+    sssom:object_label "Submodel" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id isa95:EquipmentClassType ;
+    sssom:subject_label "EquipmentClass" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/006> a sssom:Mapping ;
+    rdfs:comment "The class-level property. Maps to the same AAS construct as the instance-level one, which is itself the finding: AAS does not distinguish a property of a class from a property of an instance. See DIVERGENCES.md D3." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.6 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Property ;
+    sssom:object_label "Property" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id isa95:EquipmentClassPropertyType ;
+    sssom:subject_label "EquipmentClassProperty" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/007> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING, and the most tempting pair in the set because the names match exactly. aas:Capability is the implementation-independent POTENTIAL of an asset to achieve an effect, a qualitative and timeless statement. An ISA-95 OperationsCapability is a QUANTITY of capability available over a stated time interval, with a committed, available and unattainable breakdown. One is a disposition, the other is a scheduled quantity. See DIVERGENCES.md D2." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Capability ;
+    sssom:object_label "Capability" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:OperationsCapabilityType ;
+    sssom:subject_label "OperationsCapability" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/008> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING, second name trap. aas:Operation is an INVOCABLE method on a submodel, with input and output variables: it is a callable interface. An ISA-95 OperationsDefinition is a recipe or routing: the declarative specification of how a product is made. Mapping them turns a manufacturing recipe into a remote procedure call." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Operation ;
+    sssom:object_label "Operation" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:OperationsDefinitionType ;
+    sssom:subject_label "OperationsDefinition" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/009> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. The AAS metamodel has no concept of material, none of material class, definition, lot or sublot. Material semantics in the AAS world live in submodel templates published separately by IDTA, which are outside the metamodel and outside any crosswalk against it. Recorded so integrators do not go looking in the metamodel." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Submodel ;
+    sssom:object_label "Submodel" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:MaterialDefinitionType ;
+    sssom:subject_label "MaterialDefinition" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/010> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. aas:Entity exists to model a co-managed physical part within a shell, not a batch or lot of material with identity and genealogy. Lot tracking, the core of ISA-95 traceability, has no metamodel counterpart." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Entity ;
+    sssom:object_label "Entity" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:MaterialLotType ;
+    sssom:subject_label "MaterialLot" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/011> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. The AAS metamodel has no personnel model at all: no person, no personnel class, no qualification, no test specification. ISA-95's entire Personnel part is unmappable rather than mismapped." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Entity ;
+    sssom:object_label "Entity" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:PersonType ;
+    sssom:subject_label "Person" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/012> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE, as above, at class level." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:ConceptDescription ;
+    sssom:object_label "ConceptDescription" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:PersonnelClassType ;
+    sssom:subject_label "PersonnelClass" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/013> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. ISA-95 carries an operational location hierarchy (enterprise, site, area, work centre, work unit). The AAS metamodel carries no location concept whatsoever. Any plant hierarchy must be reintroduced through a submodel template, and is therefore invisible to metamodel-level tooling." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Entity ;
+    sssom:object_label "Entity" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:OperationalLocationType ;
+    sssom:subject_label "OperationalLocation" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/014> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. A process segment is a logical grouping of resources needed for a step of production, with resource specifications and dependencies. Nothing in the AAS metamodel expresses it, and the aas:Operation trap above makes this the pairing people reach for." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Operation ;
+    sssom:object_label "Operation" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:ProcessSegmentType ;
+    sssom:subject_label "ProcessSegment" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/015> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. Scheduling and performance reporting, ISA-95 Parts 2 and 4, have no counterpart in the AAS metamodel. The AAS describes an asset; it does not schedule work against it." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Submodel ;
+    sssom:object_label "Submodel" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:OperationsScheduleType ;
+    sssom:subject_label "OperationsSchedule" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/016> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE, the reporting half of the row above." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:Submodel ;
+    sssom:object_label "Submodel" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:OperationsPerformanceType ;
+    sssom:subject_label "OperationsPerformance" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas/mapping/017> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING, and the error most likely to be made in practice. An AssetAdministrationShell is the DIGITAL REPRESENTATION of an asset, not the asset. Equating them makes the shell the machine, so that deleting a record deletes a pump and two shells for one pump become two pumps. Map ISA-95 Equipment to the asset that the shell describes via aas:AssetInformation, never to the shell itself. See DIVERGENCES.md D1." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:object_id aas:AssetAdministrationShell ;
+    sssom:object_label "AssetAdministrationShell" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id isa95:EquipmentType ;
+    sssom:subject_label "Equipment" .
+
+isa95:EquipmentAssetMappingType skos:closeMatch aas:SpecificAssetId .
+
+isa95:EquipmentClassPropertyType skos:closeMatch aas:Property .
+
+isa95:EquipmentClassType skos:relatedMatch aas:Submodel .
+
+isa95:EquipmentPropertyType skos:closeMatch aas:Property .
+
+isa95:PhysicalAssetType skos:relatedMatch aas:AssetInformation .
+
+isa95:ClassPropertyTypeType skos:closeMatch aas:ConceptDescription,
+        aas:DataSpecificationIec61360 .
+
+<https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> a sssom:MappingSet ;
+    rdfs:label "ISA-95 (IEC 62264, via MESA B2MML) to Asset Administration Shell metamodel crosswalk" ;
+    rdfs:comment "The ISA-95 side is a LIFT of the MESA B2MML XML Schemas, not a normative artefact; see lift/b2mml_to_rdf.py for what the transformation keeps and refuses. THE STRUCTURAL POINT OF THIS PAIR: ISA-95 is a DOMAIN model (equipment, material, personnel, process segments) and the AAS metamodel is a CONTAINER model (shells, submodels, typed elements). They meet at exactly one layer, the property and its semantic definition, and both reach it through IEC 61360. Everything ISA-95 says about material, personnel, location and process has no AAS counterpart, and is recorded here as an asserted absence rather than omitted. Neither side asserts any disjointness (see metrics/RESULTS.md), so none of this can be reasoner-certified: validate with SHACL over instance data and human review. Confidence is the curator's judgement, not a computed score." ;
+    sssom:license <https://creativecommons.org/licenses/by/4.0/> ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/isa95-aas> ;
+    sssom:mapping_set_version "0.1.0" .
+

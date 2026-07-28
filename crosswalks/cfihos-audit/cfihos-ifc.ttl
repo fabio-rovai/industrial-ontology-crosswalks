@@ -1,0 +1,225 @@
+@prefix cfihos: <http://infohub.siemens-energy.com/CFIHOS#> .
+@prefix ido: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
+@prefix ifc: <http://ifcowl.openbimstandards.org/IFC4_ADD2#> .
+@prefix orcid: <https://orcid.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semapv: <https://w3id.org/semapv/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/000> a sssom:Mapping ;
+    rdfs:comment "Worked example of the general pattern. A CFIHOS length property lands in IFC as a generic length quantity, so the value and its unit survive and the CFIHOS name does not. The round trip is lossy: from IfcQuantityLength alone you cannot recover which of the 100-plus CFIHOS length properties this was." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000001Quality ;
+    sssom:subject_label "actual length" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/001> a sssom:Mapping ;
+    rdfs:comment "Second worked example, and the collision is the point: 'wall thickness', 'nominal wall thickness', 'shell wall thickness', 'tube wall thickness' and 'lower limit wall thickness' are five distinct CFIHOS properties that all map to the same IFC construct." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000540Quality ;
+    sssom:subject_label "wall thickness" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/002> a sssom:Mapping ;
+    rdfs:comment "Third of the colliding set above, recorded explicitly so that the many-to-one collapse is visible in the data rather than only argued in prose." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000249Quality ;
+    sssom:subject_label "nominal wall thickness" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/003> a sssom:Mapping ;
+    rdfs:comment "Fourth of the colliding set. In CFIHOS the qualifier 'shell' carries real engineering meaning about which part of a vessel is measured; IFC has nowhere to put it except a free-text property name." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000369Quality ;
+    sssom:subject_label "shell wall thickness" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/004> a sssom:Mapping ;
+    rdfs:comment "The nearest thing to a genuine cross-domain property, since buildings insulate too. Even here IFC would normally carry it in a material-layer property set rather than as an element quantity, so the target is arguable." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.75 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000499Quality ;
+    sssom:subject_label "insulation thickness" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/005> a sssom:Mapping ;
+    rdfs:comment "Nominal diameter is the single most-used identifier of piping components in process plant. IFC has no nominal-size concept and reduces it to a length quantity, discarding the fact that a nominal size is a designation rather than a measurement." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.8 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:narrowMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000509Quality ;
+    sssom:subject_label "nominal diameter" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/006> a sssom:Mapping ;
+    rdfs:comment "Pressure has no IFC quantity type at all: IfcElementQuantity covers length, area, volume, weight, count and time. So every one of CFIHOS's 180-plus pressure properties degrades to a generic named property value in a property set, outside the quantity machinery entirely." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.6 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcPropertySingleValue ;
+    sssom:object_label "IfcPropertySingleValue" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000535Quality ;
+    sssom:subject_label "upper limit design pressure" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/007> a sssom:Mapping ;
+    rdfs:comment "Second pressure example, kept to show that design and operating conditions, a distinction CFIHOS treats as fundamental, collapse into indistinguishable property values on the IFC side." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.6 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcPropertySingleValue ;
+    sssom:object_label "IfcPropertySingleValue" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000512Quality ;
+    sssom:subject_label "normal operating pressure" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/008> a sssom:Mapping ;
+    rdfs:comment "A regulatory classification under the Pressure Equipment Directive, drawn from a controlled list. IfcPropertyEnumeratedValue is the right IFC construct for a value from a list, but IFC carries no such list and no notion that the classification is regulatory." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.65 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcPropertyEnumeratedValue ;
+    sssom:object_label "IfcPropertyEnumeratedValue" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000320Quality ;
+    sssom:subject_label "pressure equipment category" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/009> a sssom:Mapping ;
+    rdfs:comment "As above for hazardous-area classification. Hazardous-area data is safety-critical in process plant and has no IFC representation beyond an untyped enumerated property, which is worth knowing before relying on a handover." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.65 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcPropertyEnumeratedValue ;
+    sssom:object_label "IfcPropertyEnumeratedValue" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id cfihos:CFIHOS-40000009Quality ;
+    sssom:subject_label "ATEX category" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/010> a sssom:Mapping ;
+    rdfs:comment "The route worth using. Because the Murcia rendering already grounds every CFIHOS property in IDO, and this repository certifies ido:QualityDatum against ifc:IfcPhysicalQuantity with a reasoner, CFIHOS reaches IFC through IDO as a hub rather than by direct mapping. Composing two certified hops beats authoring 1,388 direct ones." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.85 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcPhysicalQuantity ;
+    sssom:object_label "IfcPhysicalQuantity" ;
+    sssom:predicate_id skos:closeMatch ;
+    sssom:subject_id ido:QualityDatum ;
+    sssom:subject_label "QualityDatum" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/011> a sssom:Mapping ;
+    rdfs:comment "The other half of the hub route, for the 772 CFIHOS classes grounded on ido:Quality rather than ido:PhysicalQuantity. Weaker because IfcProperty straddles the borne characteristic and its recorded value, a distinction IDO keeps and IFC does not." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.5 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcProperty ;
+    sssom:object_label "IfcProperty" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:subject_id ido:Quality ;
+    sssom:subject_label "Quality" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/012> a sssom:Mapping ;
+    rdfs:comment "ASSERTED NON-MAPPING against the equivalence reading of the first row. narrowMatch is correct and exactMatch is not: promoting any of these rows to equivalence would make every CFIHOS length property equivalent to every other, since they would all be equivalent to the same IFC class. The many-to-one shape must not be promoted to OWL." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:exactMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id cfihos:CFIHOS-40000001Quality ;
+    sssom:subject_label "actual length" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/013> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. IFC's quantity set has no pressure member, so no pressure property has a quantity-level target. Recorded once against a representative property to make the gap machine-visible rather than inferable only by reading the schema." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcQuantityLength ;
+    sssom:object_label "IfcQuantityLength" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id cfihos:CFIHOS-40000803Quality ;
+    sssom:subject_label "normal operating suction pressure" .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc/mapping/014> a sssom:Mapping ;
+    rdfs:comment "ASSERTED ABSENCE. Flow rate is a rate, and IFC quantities are static magnitudes of an element. Process behaviour, which is most of what CFIHOS records about operating equipment, has no home in IFC's quantity model at all." ;
+    prov:wasAttributedTo orcid:0009-0001-7244-794X ;
+    sssom:confidence 0.9 ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:object_id ifc:IfcPhysicalQuantity ;
+    sssom:object_label "IfcPhysicalQuantity" ;
+    sssom:predicate_id skos:relatedMatch ;
+    sssom:predicate_modifier "Not" ;
+    sssom:subject_id cfihos:CFIHOS-40000275Quality ;
+    sssom:subject_label "normal operating mass flow rate" .
+
+cfihos:CFIHOS-40000009Quality skos:relatedMatch ifc:IfcPropertyEnumeratedValue .
+
+cfihos:CFIHOS-40000249Quality skos:narrowMatch ifc:IfcQuantityLength .
+
+cfihos:CFIHOS-40000320Quality skos:relatedMatch ifc:IfcPropertyEnumeratedValue .
+
+cfihos:CFIHOS-40000369Quality skos:narrowMatch ifc:IfcQuantityLength .
+
+cfihos:CFIHOS-40000499Quality skos:narrowMatch ifc:IfcQuantityLength .
+
+cfihos:CFIHOS-40000509Quality skos:narrowMatch ifc:IfcQuantityLength .
+
+cfihos:CFIHOS-40000512Quality skos:relatedMatch ifc:IfcPropertySingleValue .
+
+cfihos:CFIHOS-40000535Quality skos:relatedMatch ifc:IfcPropertySingleValue .
+
+cfihos:CFIHOS-40000540Quality skos:narrowMatch ifc:IfcQuantityLength .
+
+ido:Quality skos:relatedMatch ifc:IfcProperty .
+
+ido:QualityDatum skos:closeMatch ifc:IfcPhysicalQuantity .
+
+cfihos:CFIHOS-40000001Quality skos:narrowMatch ifc:IfcQuantityLength .
+
+<https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> a sssom:MappingSet ;
+    rdfs:label "CFIHOS V2.0 property dictionary to IFC4 ADD2 property and quantity machinery" ;
+    rdfs:comment "SCOPE, STATED UP FRONT: the open CFIHOS OWL exposes a PROPERTY DICTIONARY, 1,388 classes such as 'shell wall thickness' and 'upper limit design pressure', not a labelled equipment taxonomy in owl:Class form. So this is a crosswalk at the PROPERTY layer and nowhere else, and an equipment-class crosswalk between CFIHOS and IFC is not authorable from the open artefacts. THE FINDING: CFIHOS names 1,388 process-plant properties; IFC names roughly a dozen generic quantity and property constructs. The mapping is therefore MANY-TO-ONE INTO A GENERIC SLOT. Going CFIHOS to IFC loses the name and keeps the number; going IFC to CFIHOS is not determined at all. That asymmetry is the plant-to-building handover problem stated exactly. Exact normalised token overlap between the two class sets is ONE name. CFIHOS is an IOGP publication; this references the Universidad de Murcia OWL rendering and restates no IOGP material. Confidence is the curator's judgement." ;
+    sssom:license <https://creativecommons.org/licenses/by/4.0/> ;
+    sssom:mapping_set_id <https://w3id.org/tesseract/industrial-crosswalks/cfihos-ifc> ;
+    sssom:mapping_set_version "0.1.0" .
+

@@ -7,8 +7,10 @@ Maintained by [Tesseract Academy](https://gov.tesseract.academy).
 
 ## At a glance
 
-- **Four crosswalk pairs**: ISO 15926-14 to IFC4, ISA-95 to the Asset
-  Administration Shell, CFIHOS to ISO 15926-14, and SAREF4INMA to OPC UA.
+- **Four crosswalk pairs**, 51 correspondences and 31 asserted non-mappings and
+  absences: ISO 15926-14 to IFC4, ISA-95 to the Asset Administration Shell, CFIHOS
+  to IFC4, and SAREF4INMA to OPC UA. All 120 distinct IRIs resolve against the
+  fetched sources (`scripts/verify_iris.py`) and all four pass SHACL.
 - **Four of the seven standards measured cannot reject a mis-mapping at all.**
   CFIHOS, the AAS metamodel, SAREF core and OPC UA Device Information assert zero
   disjointness axioms, so a reasoner has nothing to contradict. A clean
@@ -36,6 +38,7 @@ python lift/opcua_to_rdf.py                       # 5 OPC UA NodeSets -> OWL
 python metrics/axiomatic_asymmetry.py --write     # the ASI table
 python crosswalks/cfihos-audit/falsifiability.py  # falsifiability + CFIHOS audit (JDK)
 python scripts/sssom_to_rdf.py                    # SSSOM -> RDF + SHACL validation
+python scripts/verify_iris.py                     # every crosswalk IRI must exist
 python reasoning/certify_bridge.py                # the four experiments (JDK, ~2h)
 ```
 
@@ -44,8 +47,8 @@ python reasoning/certify_bridge.py                # the four experiments (JDK, ~
 | Path | What it is |
 |---|---|
 | [`crosswalks/ido-ifc/`](crosswalks/ido-ifc/) | The flagship. 24 correspondences and 8 asserted non-mappings between the ISO 15926-14 line and IFC4, plus [`DIVERGENCES.md`](crosswalks/ido-ifc/DIVERGENCES.md), which is the part worth reading. |
-| [`crosswalks/cfihos-audit/`](crosswalks/cfihos-audit/) | An independent audit of a published third-party CFIHOS alignment, and the falsifiability metric. |
-| [`crosswalks/isa95-aas/`](crosswalks/isa95-aas/) | Why this pair ships an argument instead of a mapping table: two official ISA-95 renderings agree on 5.4% of their object-model concepts. |
+| [`crosswalks/cfihos-audit/`](crosswalks/cfihos-audit/) | CFIHOS to IFC4 at the property layer (12 correspondences, 3 asserted non-mappings), plus an independent audit of the published third-party CFIHOS-IDO alignment and the falsifiability metric. |
+| [`crosswalks/isa95-aas/`](crosswalks/isa95-aas/) | ISA-95 to the AAS metamodel (7 correspondences, 11 asserted absences), plus the triangulation showing two official ISA-95 renderings agree on 5.4% of their object-model concepts. |
 | [`crosswalks/saref-opcua/`](crosswalks/saref-opcua/) | 8 correspondences and 9 asserted absences. The absences outnumber the mappings, and that is the finding. |
 | [`metrics/`](metrics/) | The Axiomatic Strength Index harness and [`RESULTS.md`](metrics/RESULTS.md). |
 | [`lift/`](lift/) | ISA-95 and OPC UA ship schemas, not ontologies. These are the transformations, including what they refuse to do. |
@@ -157,10 +160,18 @@ rather than from nothing. The correspondences are hand-authored and the confiden
 values are a curator's judgement, stated as such and not presented as computed
 scores.
 
-Two pairs deliberately ship arguments rather than mapping tables, because building
-a mapping table where both sides are refutation-inert would produce something that
-looks authoritative and could never be checked. Saying so is the more useful
-contribution.
+Only one pair, ISO 15926-14 to IFC4, is reasoner-certified. The other three cannot
+be, because at least one side of each asserts no disjointness at all, so a
+description-logic reasoner has nothing to check. Those three are validated by SHACL
+and defended by argument in their `DIVERGENCES.md`, and each says so on its own page.
+Treating a SHACL-validated crosswalk as though it were a certified one is exactly the
+error this repository is about.
+
+Two pairs are also deliberately narrow in scope, and say so: the CFIHOS crosswalk is
+at the property layer only, because the open CFIHOS OWL exposes a property dictionary
+rather than a labelled equipment taxonomy; and the ISA-95 crosswalk is against MESA
+B2MML and the IDTA metamodel specifically, and does not transfer to the OPC UA
+renderings of either standard.
 
 Corrections and disagreements are welcome as issues. The measurements are all
 reproducible, so a disagreement about a number can be settled by running the code.

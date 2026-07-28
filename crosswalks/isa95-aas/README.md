@@ -1,7 +1,14 @@
 # ISA-95 ↔ AAS: which ISA-95, and which AAS?
 
-This pair does not ship a mapping table. It ships the reason a mapping table
-would be misleading.
+**The crosswalk is [`isa95-aas.sssom.tsv`](isa95-aas.sssom.tsv): 7 correspondences and
+11 asserted non-mappings or absences, with the argument in
+[`DIVERGENCES.md`](DIVERGENCES.md).** The denials outnumber the mappings because the
+two models meet at exactly one layer, the property and its IEC 61360 definition, and
+ISA-95's material, personnel, location, process-segment and scheduling models have no
+counterpart in the AAS metamodel at all.
+
+This page is the measurement behind that shape: before aligning ISA-95 to anything,
+it is worth asking which ISA-95.
 
 "Crosswalk ISA-95 to the Asset Administration Shell" presupposes that there is one
 ISA-95 and one AAS to align. There are at least two of each, published by different
@@ -51,7 +58,7 @@ these numbers are a *lower bound* on semantic agreement. What they measure exact
 is whether a tool can join the two renderings by name, which is what integration
 projects actually attempt.
 
-## Why there is no reasoner experiment here
+## Why there is no reasoner experiment here (but there is still a crosswalk)
 
 Three of the four renderings have an Axiomatic Strength Index of zero and a
 falsifiability rate of zero. The fourth, B2MML, scores 56, entirely from
@@ -60,7 +67,8 @@ cardinality introduced by `maxOccurs="1"`, and has no disjointness at all.
 So there is no reasoner experiment to run on this pair. Any alignment between any
 of these four artefacts will be pronounced consistent and coherent regardless of
 how wrong it is. That is not a limitation of this repository; it is the state of
-the standards. See [`../cfihos-audit/`](../cfihos-audit/) for the falsifiability
+the standards, and it is why the crosswalk here is validated by SHACL and by
+argument rather than certified by a reasoner as the ISO 15926-14 to IFC4 pair is. See [`../cfihos-audit/`](../cfihos-audit/) for the falsifiability
 argument in full.
 
 ## The lift, and one temptation resisted
