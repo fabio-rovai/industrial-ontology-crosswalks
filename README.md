@@ -1,5 +1,7 @@
 # Industrial ontology crosswalks
 
+[![Sponsor](https://img.shields.io/github/sponsors/fabio-rovai?label=Sponsor&logo=GitHub%20Sponsors&logoColor=EA4AAA&color=EA4AAA)](https://github.com/sponsors/fabio-rovai)
+
 **Open crosswalks between four pairs of industrial data standards, and the
 measurement that explains why crosswalks like these fail.**
 
@@ -193,3 +195,9 @@ CC BY 4.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 Cite via [CITATION.cff](CITATION.cff). If you use the CFIHOS audit, please also
 cite the ontology it audits (see
 [`crosswalks/cfihos-audit/README.md`](crosswalks/cfihos-audit/README.md)).
+
+---
+
+## Sponsor
+
+If this work is useful to you, you can support its continued development through [GitHub Sponsors](https://github.com/sponsors/fabio-rovai).
